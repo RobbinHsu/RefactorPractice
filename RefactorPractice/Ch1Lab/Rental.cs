@@ -8,8 +8,8 @@
 
         public Rental(Movie movie, int dayRented)
         {
-            this.Movie = movie;
-            this.DayRented = dayRented;
+            Movie = movie;
+            DayRented = dayRented;
         }
     }
 }

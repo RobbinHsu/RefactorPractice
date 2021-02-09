@@ -13,12 +13,12 @@ namespace RefatorPractice.Ch1Lab
 
         public Customer(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
         public void AddRental(Rental rental)
         {
-            this._rental.Add(rental);
+            _rental.Add(rental);
         }
 
         public string GetStatement()
@@ -28,9 +28,9 @@ namespace RefatorPractice.Ch1Lab
 
             // 常客積點
             var frequentRenterPoints = 0;
-            var result = "Rental Record for" + this.Name;
+            var result = $"Rental Record for {Name} \n";
 
-            this._rental.ForEach(
+            _rental.ForEach(
                 item =>
                 {
                     var thisAmount = 0.0;
@@ -59,15 +59,17 @@ namespace RefatorPractice.Ch1Lab
 
                             break;
                     }
+
                     frequentRenterPoints++;
                     if (item.Movie.PriceCode == Movie.New_Release && item.DayRented > 1)
                     {
                         frequentRenterPoints++;
                     }
-                    result += $" {item.Movie.Title} {thisAmount}";
+
+                    result += $"{item.Movie.Title} {thisAmount} \n";
                     totalAmount += thisAmount;
                 });
-            result += $" Amount owed is {totalAmount} ";
+            result += $"Amount owed is {totalAmount} \n";
             result += $"You earned {frequentRenterPoints} frequent renter points";
 
             return result;

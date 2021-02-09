@@ -18,8 +18,8 @@ namespace RefatorPractice.Ch1Lab
 
         public Movie(string title, int priceCode)
         {
-            this.Title = title;
-            this.PriceCode = priceCode;
+            Title = title;
+            PriceCode = priceCode;
         }
     }
 }
