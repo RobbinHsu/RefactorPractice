@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace RefatorPractice.Ch1Lab
+namespace RefactorPractice.Ch1Lab
 {
     /// <summary>The movie.</summary>
     public class Movie

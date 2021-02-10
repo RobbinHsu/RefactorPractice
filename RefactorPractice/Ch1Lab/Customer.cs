@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
-namespace RefatorPractice.Ch1Lab
+namespace RefactorPractice.Ch1Lab
 {
     public class Customer
     {

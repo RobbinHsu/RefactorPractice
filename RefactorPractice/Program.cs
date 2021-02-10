@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using RefatorPractice.Ch1Lab;
+using RefactorPractice.Ch1Lab;
 
-namespace RefatorPractice
+namespace RefactorPractice
 {
     internal class Program
     {

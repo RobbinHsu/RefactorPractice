@@ -1,4 +1,4 @@
-﻿namespace RefatorPractice.Ch1Lab
+﻿namespace RefactorPractice.Ch1Lab
 {
     public class Rental
     {
