@@ -32,7 +32,7 @@ namespace RefactorPractice.Ch1Lab
 
             foreach (var item in _rental)
             {
-                var thisAmount = AmountFor(item);
+                var thisAmount = item.GetCharge();
 
                 frequentRenterPoints++;
                 if (item.Movie.PriceCode == Movie.New_Release && item.DayRented > 1)
@@ -48,38 +48,6 @@ namespace RefactorPractice.Ch1Lab
             result += $"You earned {frequentRenterPoints} frequent renter points";
 
             return result;
-        }
-
-        private double AmountFor(Rental aRental)
-        {
-            var thisAmount = 0.0;
-
-            switch (aRental.Movie.PriceCode)
-            {
-                case Movie.Regular:
-                    thisAmount += 2;
-                    if (aRental.DayRented > 2)
-                    {
-                        thisAmount += (aRental.DayRented - 2) * 1.5;
-                    }
-
-                    break;
-
-                case Movie.New_Release:
-                    thisAmount += aRental.DayRented * 3;
-                    break;
-
-                case Movie.Childrens:
-                    thisAmount += 1.5;
-                    if (aRental.DayRented > 3)
-                    {
-                        thisAmount += (aRental.DayRented - 3) * 1.5;
-                    }
-
-                    break;
-            }
-
-            return thisAmount;
         }
     }
 }
