@@ -23,9 +23,6 @@ namespace RefactorPractice.Ch1Lab
 
         public string GetStatement()
         {
-            // 總消費金額
-            var totalAmount = 0.0;
-
             // 常客積點
             var frequentRenterPoints = 0;
             var result = $"Rental Record for {Name} \n";
@@ -34,14 +31,25 @@ namespace RefactorPractice.Ch1Lab
             {
                 frequentRenterPoints = item.GetFrequentRenterPoints();
 
-                result += $"{item.Movie.Title} {thisAmount} \n";
-                totalAmount += thisAmount;
+                result += $"{item.Movie.Title} {item.GetCharge()} \n";
             }
 
-            result += $"Amount owed is {totalAmount} \n";
+            result += $"Amount owed is {GetTotalAmount()} \n";
             result += $"You earned {frequentRenterPoints} frequent renter points";
 
             return result;
+        }
+
+        private double GetTotalAmount()
+        {
+            // 總消費金額
+            var totalAmount = 0.0;
+            foreach (var item in _rental)
+            {
+                totalAmount += item.GetCharge();
+            }
+
+            return totalAmount;
         }
     }
 }
