@@ -32,13 +32,7 @@ namespace RefactorPractice.Ch1Lab
 
             foreach (var item in _rental)
             {
-                var thisAmount = item.GetCharge();
-
-                frequentRenterPoints++;
-                if (item.Movie.PriceCode == Movie.New_Release && item.DayRented > 1)
-                {
-                    frequentRenterPoints++;
-                }
+                frequentRenterPoints = item.GetFrequentRenterPoints();
 
                 result += $"{item.Movie.Title} {thisAmount} \n";
                 totalAmount += thisAmount;

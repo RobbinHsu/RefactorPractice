@@ -43,5 +43,17 @@
 
             return thisAmount;
         }
+
+        public int GetFrequentRenterPoints()
+        {
+            var frequentRenterPoints = 0;
+            frequentRenterPoints++;
+            if (this.Movie.PriceCode == Movie.New_Release && this.DayRented > 1)
+            {
+                frequentRenterPoints++;
+            }
+
+            return frequentRenterPoints;
+        }
     }
 }
