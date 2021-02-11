@@ -46,14 +46,12 @@
 
         public int GetFrequentRenterPoints()
         {
-            var frequentRenterPoints = 0;
-            frequentRenterPoints++;
-            if (this.Movie.PriceCode == Movie.New_Release && this.DayRented > 1)
+            if (Movie.PriceCode == Movie.New_Release && DayRented > 1)
             {
-                frequentRenterPoints++;
+                return 2;
             }
 
-            return frequentRenterPoints;
+            return 1;
         }
     }
 }
