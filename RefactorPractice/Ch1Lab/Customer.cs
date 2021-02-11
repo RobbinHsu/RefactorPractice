@@ -23,19 +23,26 @@ namespace RefactorPractice.Ch1Lab
 
         public string GetStatement()
         {
-            // 常客積點
-            var frequentRenterPoints = 0;
             var result = $"Rental Record for {Name} \n";
-
             foreach (var item in _rental)
             {
-                frequentRenterPoints = item.GetFrequentRenterPoints();
-
                 result += $"{item.Movie.Title} {item.GetCharge()} \n";
             }
 
             result += $"Amount owed is {GetTotalAmount()} \n";
-            result += $"You earned {frequentRenterPoints} frequent renter points";
+            result += $"You earned {GetTotalFrequentRenterPoints()} frequent renter points";
+
+            return result;
+        }
+
+        private int GetTotalFrequentRenterPoints()
+        {
+            // 常客積點
+            var result = 0;
+            foreach (var item in _rental)
+            {
+                result = item.GetFrequentRenterPoints();
+            }
 
             return result;
         }
