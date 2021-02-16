@@ -35,6 +35,22 @@ namespace RefactorPractice.Ch1Lab
             return result;
         }
 
+        public string GetHtmlStatement()
+        {
+            var result = $"<H1>Rental Record for <EM>{Name}</EM></H1><P>";
+            foreach (var item in _rental)
+            {
+                result += $"{item.Movie.Title} : {item.GetCharge()}<BR>";
+            }
+
+            result += $"<P>You owe <EM>{GetTotalAmount()}</EM><P>";
+            result +=
+                $"on this rental you earned earned <EM>{GetTotalFrequentRenterPoints()}</EM> frequent renter points<P>";
+
+            return result;
+        }
+
+
         private int GetTotalFrequentRenterPoints()
         {
             // 常客積點
