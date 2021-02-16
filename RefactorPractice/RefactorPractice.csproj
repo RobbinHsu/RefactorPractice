@@ -43,9 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ch1Lab\Customer.cs" />
-    <Compile Include="Ch1Lab\HtmlStatement.cs" />
+    <Compile Include="Ch1Lab\Statement.cs" />
     <Compile Include="Ch1Lab\Movie.cs" />
     <Compile Include="Ch1Lab\Rental.cs" />
+    <Compile Include="Ch1Lab\HtmlStatement.cs" />
     <Compile Include="Ch1Lab\TextStatement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
