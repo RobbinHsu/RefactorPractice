@@ -9,6 +9,7 @@ namespace RefactorPractice.Ch1Lab
     {
         public readonly List<Rental> Rental = new List<Rental>();
         public string Statement => new TextStatement().Value(this);
+        public string HtmlStatement => new HtmlStatement().Value(this);
 
         public string Name { get; }
 
@@ -21,21 +22,6 @@ namespace RefactorPractice.Ch1Lab
         public void AddRental(Rental rental)
         {
             Rental.Add(rental);
-        }
-
-        public string GetHtmlStatement()
-        {
-            var result = $"<H1>Rental Record for <EM>{Name}</EM></H1><P>";
-            foreach (var item in Rental)
-            {
-                result += $"{item.Movie.Title} : {item.GetCharge()}<BR>";
-            }
-
-            result += $"<P>You owe <EM>{GetTotalAmount()}</EM><P>";
-            result +=
-                $"on this rental you earned earned <EM>{GetTotalFrequentRenterPoints()}</EM> frequent renter points<P>";
-
-            return result;
         }
 
 
