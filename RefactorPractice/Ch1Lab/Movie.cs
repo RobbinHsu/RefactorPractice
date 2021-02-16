@@ -21,5 +21,37 @@ namespace RefactorPractice.Ch1Lab
             Title = title;
             PriceCode = priceCode;
         }
+
+        public double GetCharge(int dayRented)
+        {
+            var thisAmount = 0.0;
+
+            switch (PriceCode)
+            {
+                case Regular:
+                    thisAmount += 2;
+                    if (dayRented > 2)
+                    {
+                        thisAmount += (dayRented - 2) * 1.5;
+                    }
+
+                    break;
+
+                case New_Release:
+                    thisAmount += dayRented * 3;
+                    break;
+
+                case Childrens:
+                    thisAmount += 1.5;
+                    if (dayRented > 3)
+                    {
+                        thisAmount += (dayRented - 3) * 1.5;
+                    }
+
+                    break;
+            }
+
+            return thisAmount;
+        }
     }
 }
