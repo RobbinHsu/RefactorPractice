@@ -6,16 +6,31 @@ namespace RefactorPractice.Ch1Lab
     {
         public string Value(Customer customer)
         {
-            var result = $"Rental Record for {customer.Name} \n";
+            var result = HeaderString(customer);
             foreach (var item in customer.Rental)
             {
-                result += $"{item.Movie.Title} {item.GetCharge()} \n";
+                result += EachRentalString(item);
             }
 
-            result += $"Amount owed is {customer.GetTotalAmount()} \n";
-            result += $"You earned {customer.GetTotalFrequentRenterPoints()} frequent renter points";
+            result += FooterString(customer);
 
             return result;
+        }
+
+        private string FooterString(Customer customer)
+        {
+            return $"Amount owed is {customer.GetTotalAmount()} \n" +
+                   $"You earned {customer.GetTotalFrequentRenterPoints()} frequent renter points";
+        }
+
+        private static string EachRentalString(Rental item)
+        {
+            return $"{item.Movie.Title} {item.GetCharge()} \n";
+        }
+
+        private static string HeaderString(Customer customer)
+        {
+            return $"Rental Record for {customer.Name} \n";
         }
     }
 }
