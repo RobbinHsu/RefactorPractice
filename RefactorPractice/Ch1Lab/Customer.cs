@@ -7,9 +7,11 @@ namespace RefactorPractice.Ch1Lab
 {
     public class Customer
     {
-        private List<Rental> _rental = new List<Rental>();
+        public readonly List<Rental> Rental = new List<Rental>();
+        public string Statement => new TextStatement().Value(this);
 
         public string Name { get; }
+
 
         public Customer(string name)
         {
@@ -18,27 +20,13 @@ namespace RefactorPractice.Ch1Lab
 
         public void AddRental(Rental rental)
         {
-            _rental.Add(rental);
-        }
-
-        public string GetStatement()
-        {
-            var result = $"Rental Record for {Name} \n";
-            foreach (var item in _rental)
-            {
-                result += $"{item.Movie.Title} {item.GetCharge()} \n";
-            }
-
-            result += $"Amount owed is {GetTotalAmount()} \n";
-            result += $"You earned {GetTotalFrequentRenterPoints()} frequent renter points";
-
-            return result;
+            Rental.Add(rental);
         }
 
         public string GetHtmlStatement()
         {
             var result = $"<H1>Rental Record for <EM>{Name}</EM></H1><P>";
-            foreach (var item in _rental)
+            foreach (var item in Rental)
             {
                 result += $"{item.Movie.Title} : {item.GetCharge()}<BR>";
             }
@@ -51,11 +39,11 @@ namespace RefactorPractice.Ch1Lab
         }
 
 
-        private int GetTotalFrequentRenterPoints()
+        public int GetTotalFrequentRenterPoints()
         {
             // 常客積點
             var result = 0;
-            foreach (var item in _rental)
+            foreach (var item in Rental)
             {
                 result = item.GetFrequentRenterPoints();
             }
@@ -63,11 +51,11 @@ namespace RefactorPractice.Ch1Lab
             return result;
         }
 
-        private double GetTotalAmount()
+        public double GetTotalAmount()
         {
             // 總消費金額
             var totalAmount = 0.0;
-            foreach (var item in _rental)
+            foreach (var item in Rental)
             {
                 totalAmount += item.GetCharge();
             }
