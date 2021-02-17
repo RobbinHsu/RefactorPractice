@@ -1,12 +1,12 @@
 ﻿namespace RefactorPractice.Ch1Lab
 {
-    public class NewChildrenPrice
+    public class NewChildrenPrice : Price
     {
         public NewChildrenPrice()
         {
         }
 
-        public int GetPriceCode()
+        public override int GetPriceCode()
         {
             return Movie.Childrens;
         }

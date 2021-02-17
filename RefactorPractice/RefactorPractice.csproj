@@ -45,6 +45,7 @@
     <Compile Include="Ch1Lab\Customer.cs" />
     <Compile Include="Ch1Lab\NewChildrenPrice.cs" />
     <Compile Include="Ch1Lab\NewReleasePrice.cs" />
+    <Compile Include="Ch1Lab\Price.cs" />
     <Compile Include="Ch1Lab\RegularPrice.cs" />
     <Compile Include="Ch1Lab\Statement.cs" />
     <Compile Include="Ch1Lab\Movie.cs" />

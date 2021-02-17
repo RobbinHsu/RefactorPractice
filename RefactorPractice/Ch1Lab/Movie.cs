@@ -6,6 +6,7 @@ namespace RefactorPractice.Ch1Lab
     /// <summary>The movie.</summary>
     public class Movie
     {
+        private Price _price;
         public const int Childrens = 2;
 
         public const int Regular = 0;
@@ -26,7 +27,7 @@ namespace RefactorPractice.Ch1Lab
         {
             var thisAmount = 0.0;
 
-            switch (PriceCode)
+            switch (GetPriceCode())
             {
                 case Regular:
                     thisAmount += 2;
@@ -64,20 +65,25 @@ namespace RefactorPractice.Ch1Lab
             return 1;
         }
 
+        private int GetPriceCode()
+        {
+            return _price.GetPriceCode();
+        }
+
         private void SetPriceCode(int priceCode)
         {
             switch (priceCode)
             {
                 case Regular:
-                    PriceCode = new RegularPrice().GetPriceCode();
+                    _price = new RegularPrice();
                     break;
 
                 case New_Release:
-                    PriceCode = new NewReleasePrice().GetPriceCode();
+                    _price = new NewReleasePrice();
                     break;
 
                 case Childrens:
-                    PriceCode = new NewChildrenPrice().GetPriceCode();
+                    _price = new NewChildrenPrice();
                     break;
             }
         }

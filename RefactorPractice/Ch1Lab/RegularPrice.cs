@@ -1,12 +1,12 @@
 ﻿namespace RefactorPractice.Ch1Lab
 {
-    public class RegularPrice
+    public class RegularPrice : Price
     {
         public RegularPrice()
         {
         }
 
-        public int GetPriceCode()
+        public override int GetPriceCode()
         {
             return Movie.Regular;
         }
