@@ -19,12 +19,7 @@
 
         public int GetFrequentRenterPoints()
         {
-            if (Movie.PriceCode == Movie.New_Release && DayRented > 1)
-            {
-                return 2;
-            }
-
-            return 1;
+            return Movie.GetFrequentRenterPoints(DayRented);
         }
     }
 }

@@ -53,5 +53,15 @@ namespace RefactorPractice.Ch1Lab
 
             return thisAmount;
         }
+
+        public int GetFrequentRenterPoints(int dayRented)
+        {
+            if (PriceCode == Movie.New_Release && dayRented > 1)
+            {
+                return 2;
+            }
+
+            return 1;
+        }
     }
 }
