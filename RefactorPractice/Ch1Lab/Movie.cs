@@ -19,7 +19,7 @@ namespace RefactorPractice.Ch1Lab
         public Movie(string title, int priceCode)
         {
             Title = title;
-            PriceCode = priceCode;
+            SetPriceCode(priceCode);
         }
 
         public double GetCharge(int dayRented)
@@ -56,12 +56,30 @@ namespace RefactorPractice.Ch1Lab
 
         public int GetFrequentRenterPoints(int dayRented)
         {
-            if (PriceCode == Movie.New_Release && dayRented > 1)
+            if (PriceCode == New_Release && dayRented > 1)
             {
                 return 2;
             }
 
             return 1;
+        }
+
+        private void SetPriceCode(int priceCode)
+        {
+            switch (priceCode)
+            {
+                case Regular:
+                    PriceCode = Regular;
+                    break;
+
+                case New_Release:
+                    PriceCode = New_Release;
+                    break;
+
+                case Childrens:
+                    PriceCode = Childrens;
+                    break;
+            }
         }
     }
 }
