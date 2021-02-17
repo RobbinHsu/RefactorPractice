@@ -69,15 +69,15 @@ namespace RefactorPractice.Ch1Lab
             switch (priceCode)
             {
                 case Regular:
-                    PriceCode = Regular;
+                    PriceCode = new RegularPrice().GetPriceCode();
                     break;
 
                 case New_Release:
-                    PriceCode = New_Release;
+                    PriceCode = new NewReleasePrice().GetPriceCode();
                     break;
 
                 case Childrens:
-                    PriceCode = Childrens;
+                    PriceCode = new NewChildrenPrice().GetPriceCode();
                     break;
             }
         }

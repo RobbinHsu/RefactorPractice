@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ch1Lab\Customer.cs" />
+    <Compile Include="Ch1Lab\NewChildrenPrice.cs" />
+    <Compile Include="Ch1Lab\NewReleasePrice.cs" />
+    <Compile Include="Ch1Lab\RegularPrice.cs" />
     <Compile Include="Ch1Lab\Statement.cs" />
     <Compile Include="Ch1Lab\Movie.cs" />
     <Compile Include="Ch1Lab\Rental.cs" />
