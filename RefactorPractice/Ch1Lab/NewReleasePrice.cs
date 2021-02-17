@@ -10,5 +10,12 @@
         {
             return Movie.New_Release;
         }
+
+        public override double GetCharge(int dayRented)
+        {
+            double thisAmount = 0;
+            thisAmount += dayRented * 3;
+            return thisAmount;
+        }
     }
 }

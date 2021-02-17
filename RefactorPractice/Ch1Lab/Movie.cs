@@ -25,35 +25,9 @@ namespace RefactorPractice.Ch1Lab
 
         public double GetCharge(int dayRented)
         {
-            var thisAmount = 0.0;
-
-            switch (GetPriceCode())
-            {
-                case Regular:
-                    thisAmount += 2;
-                    if (dayRented > 2)
-                    {
-                        thisAmount += (dayRented - 2) * 1.5;
-                    }
-
-                    break;
-
-                case New_Release:
-                    thisAmount += dayRented * 3;
-                    break;
-
-                case Childrens:
-                    thisAmount += 1.5;
-                    if (dayRented > 3)
-                    {
-                        thisAmount += (dayRented - 3) * 1.5;
-                    }
-
-                    break;
-            }
-
-            return thisAmount;
+            return _price.GetCharge(dayRented);
         }
+
 
         public int GetFrequentRenterPoints(int dayRented)
         {
