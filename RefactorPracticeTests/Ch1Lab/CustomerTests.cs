@@ -12,28 +12,77 @@ namespace RefactorPractice.Ch1Lab.Tests
     [TestFixture()]
     public class CustomerTests
     {
+        private string _actual;
+        private Customer _customer;
+        private Rental _rental;
+
         [Test()]
-        public void GetHtmlStatementTest()
+        public void GetChildrenMovieHtmlStatement()
         {
-            var customer = new Customer("Bryan");
-            var rental = new Rental(new Movie("Movie1", 0), 2);
-            customer.AddRental(rental);
-            var actual = customer.HtmlStatement;
-            var expected =
-                "<H1>Rental Record for <EM>Bryan</EM></H1><P>Movie1 : 2<BR><P>You owe <EM>2</EM><P>on this rental you earned earned <EM>1</EM> frequent renter points<P>";
-            Assert.AreEqual(expected, actual);
+            GivenCustomerName("Tom");
+            GivenRentalMovieInfo("Movie2", 2, 10);
+            CustomerRentalMovie();
+            GetHtmlStatement();
+            ShouldBeEqualHtml("Tom", "Movie2", 12, 1);
         }
 
         [Test()]
-        public void GetStatementTest()
+        public void GetNewReleaseTextStatement()
         {
-            var customer = new Customer("Bryan");
-            var rental = new Rental(new Movie("Movie1", 0), 2);
-            customer.AddRental(rental);
-            var actual = customer.Statement;
+            GivenCustomerName("Bryan");
+            GivenRentalMovieInfo("Movie1", 1, 5);
+            CustomerRentalMovie();
+            GetTextStatement();
+            ShouldBeEqualText("Bryan", "Movie1", 15, 2);
+        }
+
+        [Test()]
+        public void GetRegularMovieHtmlStatement()
+        {
+            GivenCustomerName("Bryan");
+            GivenRentalMovieInfo("Movie1", 0, 2);
+            CustomerRentalMovie();
+            GetHtmlStatement();
+            ShouldBeEqualHtml("Bryan", "Movie1", 2, 1);
+        }
+
+        private void ShouldBeEqualText(string name, string movie, int price, int frequentPoints)
+        {
             var expected =
-                "Rental Record for Bryan \nMovie1 2 \nAmount owed is 2 \nYou earned 1 frequent renter points";
-            Assert.AreEqual(expected, actual);
+                $"Rental Record for {name} \n{movie} {price} \nAmount owed is {price} \nYou earned {frequentPoints} frequent renter points";
+            Assert.AreEqual(expected, _actual);
+        }
+
+        private void GetTextStatement()
+        {
+            _actual = _customer.Statement;
+        }
+
+        private void ShouldBeEqualHtml(string name, string movie, int price, int frequentPoints)
+        {
+            var expected =
+                $"<H1>Rental Record for <EM>{name}</EM></H1><P>{movie} : {price}<BR><P>You owe <EM>{price}</EM><P>on this rental you earned earned <EM>{frequentPoints}</EM> frequent renter points<P>";
+            Assert.AreEqual(expected, _actual);
+        }
+
+        private void GetHtmlStatement()
+        {
+            _actual = _customer.HtmlStatement;
+        }
+
+        private void CustomerRentalMovie()
+        {
+            _customer.AddRental(_rental);
+        }
+
+        private void GivenRentalMovieInfo(string movie, int priceCode, int dayRented)
+        {
+            _rental = new Rental(new Movie(movie, priceCode), dayRented);
+        }
+
+        private void GivenCustomerName(string name)
+        {
+            _customer = new Customer(name);
         }
     }
 }
