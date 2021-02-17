@@ -15,8 +15,6 @@ namespace RefactorPractice.Ch1Lab
 
         public string Title { get; }
 
-        public int PriceCode { get; set; }
-
         public Movie(string title, int priceCode)
         {
             Title = title;
@@ -31,7 +29,7 @@ namespace RefactorPractice.Ch1Lab
 
         public int GetFrequentRenterPoints(int dayRented)
         {
-            if (PriceCode == New_Release && dayRented > 1)
+            if (GetPriceCode() == New_Release && dayRented > 1)
             {
                 return 2;
             }
