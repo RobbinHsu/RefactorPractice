@@ -12,10 +12,7 @@ namespace ExtractMethod
         {
             var outstanding = 0.0;
 
-            // print banner
-            Console.WriteLine("**************************");
-            Console.WriteLine("***** Customer Owes  *****");
-            Console.WriteLine("**************************");
+            PrintBanner();
 
             foreach (var order in _orders)
             {
@@ -25,6 +22,14 @@ namespace ExtractMethod
             // print detail
             Console.WriteLine($"name:{_name}");
             Console.WriteLine($"amount:{outstanding}");
+        }
+
+        private void PrintBanner()
+        {
+            // print banner
+            Console.WriteLine("**************************");
+            Console.WriteLine("***** Customer Owes  *****");
+            Console.WriteLine("**************************");
         }
     }
 }
