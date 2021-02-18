@@ -17,10 +17,5 @@
 
             return thisAmount;
         }
-
-        public override int GetPriceCode()
-        {
-            return Movie.Regular;
-        }
     }
 }

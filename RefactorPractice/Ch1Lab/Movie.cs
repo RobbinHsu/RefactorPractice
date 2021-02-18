@@ -15,6 +15,12 @@ namespace RefactorPractice.Ch1Lab
 
         public string Title { get; }
 
+        public Price Price
+        {
+            set { _price = value; }
+            get { return _price; }
+        }
+
         public Movie(string title, int priceCode)
         {
             Title = title;
@@ -24,22 +30,6 @@ namespace RefactorPractice.Ch1Lab
         public double GetCharge(int dayRented)
         {
             return _price.GetCharge(dayRented);
-        }
-
-
-        public int GetFrequentRenterPoints(int dayRented)
-        {
-            if (GetPriceCode() == New_Release && dayRented > 1)
-            {
-                return 2;
-            }
-
-            return 1;
-        }
-
-        private int GetPriceCode()
-        {
-            return _price.GetPriceCode();
         }
 
         private void SetPriceCode(int priceCode)

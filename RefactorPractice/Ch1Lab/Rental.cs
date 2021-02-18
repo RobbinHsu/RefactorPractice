@@ -19,7 +19,7 @@
 
         public int GetFrequentRenterPoints()
         {
-            return Movie.GetFrequentRenterPoints(DayRented);
+            return Movie.Price.GetFrequentRenterPoints(DayRented);
         }
     }
 }

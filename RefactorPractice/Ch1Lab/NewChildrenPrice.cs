@@ -6,11 +6,6 @@
         {
         }
 
-        public override int GetPriceCode()
-        {
-            return Movie.Childrens;
-        }
-
         public override double GetCharge(int dayRented)
         {
             double thisAmount = 0;
