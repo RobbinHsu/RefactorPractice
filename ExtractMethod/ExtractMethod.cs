@@ -10,16 +10,22 @@ namespace ExtractMethod
 
         public void PrintOwing()
         {
-            var outstanding = 0.0;
-
             PrintBanner();
 
-            foreach (var order in _orders)
-            {
-                outstanding += order.GetAmount();
-            }
+            var outstanding = GetOutstanding();
 
             PrintDetails(outstanding);
+        }
+
+        private double GetOutstanding()
+        {
+            var result = 0.0;
+            foreach (var order in _orders)
+            {
+                result += order.GetAmount();
+            }
+
+            return result;
         }
 
         private void PrintDetails(double outstanding)
