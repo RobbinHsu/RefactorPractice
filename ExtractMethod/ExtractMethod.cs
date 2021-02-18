@@ -19,6 +19,11 @@ namespace ExtractMethod
                 outstanding += order.GetAmount();
             }
 
+            PrintDetails(outstanding);
+        }
+
+        private void PrintDetails(double outstanding)
+        {
             // print detail
             Console.WriteLine($"name:{_name}");
             Console.WriteLine($"amount:{outstanding}");
