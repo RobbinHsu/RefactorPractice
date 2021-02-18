@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RefactorPractice.Ch1Lab
@@ -6,20 +7,17 @@ namespace RefactorPractice.Ch1Lab
     /// <summary>The movie.</summary>
     public class Movie
     {
+        private readonly Dictionary<int, Price> _lookupPrice = new Dictionary<int, Price>()
+        {
+            {0, new RegularPrice()},
+            {1, new NewReleasePrice()},
+            {2, new NewChildrenPrice()},
+        };
+
         private Price _price;
-        public const int Childrens = 2;
-
-        public const int Regular = 0;
-
-        public const int New_Release = 1;
+        public Price Price => _price;
 
         public string Title { get; }
-
-        public Price Price
-        {
-            set { _price = value; }
-            get { return _price; }
-        }
 
         public Movie(string title, int priceCode)
         {
@@ -34,20 +32,7 @@ namespace RefactorPractice.Ch1Lab
 
         private void SetPriceCode(int priceCode)
         {
-            switch (priceCode)
-            {
-                case Regular:
-                    _price = new RegularPrice();
-                    break;
-
-                case New_Release:
-                    _price = new NewReleasePrice();
-                    break;
-
-                case Childrens:
-                    _price = new NewChildrenPrice();
-                    break;
-            }
+            _lookupPrice.TryGetValue(priceCode, out _price);
         }
     }
 }
