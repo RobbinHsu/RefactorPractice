@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactorPractice", "Refacto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactorPracticeTests", "RefactorPracticeTests\RefactorPracticeTests.csproj", "{F38EE6C1-7EF0-4668-B992-43724A28D03D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractMethod", "ExtractMethod\ExtractMethod.csproj", "{D0BFD327-C425-4B56-B74A-0980AD23838D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtractMethod", "ExtractMethod\ExtractMethod.csproj", "{D0BFD327-C425-4B56-B74A-0980AD23838D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakingMethodCallsSimpler", "MakingMethodCallsSimpler\MakingMethodCallsSimpler.csproj", "{D8A36E5A-824A-4338-9426-4D7B691CDFD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D0BFD327-C425-4B56-B74A-0980AD23838D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0BFD327-C425-4B56-B74A-0980AD23838D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0BFD327-C425-4B56-B74A-0980AD23838D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A36E5A-824A-4338-9426-4D7B691CDFD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A36E5A-824A-4338-9426-4D7B691CDFD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A36E5A-824A-4338-9426-4D7B691CDFD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A36E5A-824A-4338-9426-4D7B691CDFD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
