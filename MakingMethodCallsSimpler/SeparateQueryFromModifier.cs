@@ -18,6 +18,26 @@ namespace MakingMethodCallsSimpler
                 if (people[i].Equals("Don"))
                 {
                     SendAlert();
+                    return FoundPerson(people);
+                }
+
+                if (people[i].Equals("John"))
+                {
+                    SendAlert();
+                    return FoundPerson(people);
+                }
+            }
+
+            return FoundPerson(people);
+        }
+
+        public string FoundPerson(string[] people)
+        {
+            for (var i = 0; i < people.Length; i++)
+            {
+                if (people[i].Equals("Don"))
+                {
+                    SendAlert();
                     return "Don";
                 }
 
