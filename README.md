@@ -1,4 +1,6 @@
 ### 第一個重構 & 重構原則
+#### **古之人與其不可傳也死矣，然則君之所讀者，古人之糟魄已夫。**  
+
 * [第一個重構](https://github.com/RobbinHsu/RefactorPractice/tree/MyRefactor/RefactorPractice)
 ### 重新組織函式(Composing Methods)
 * [提煉函式(Extract Method)](https://github.com/RobbinHsu/RefactorPractice/tree/MyRefactor/ExtractMethod)
