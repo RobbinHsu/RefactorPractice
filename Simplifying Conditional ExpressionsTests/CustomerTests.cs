@@ -14,17 +14,33 @@ namespace Simplifying_Conditional_Expressions.Tests
         [Test()]
         public void GetCustomerName()
         {
+            GivenCustomerObject(new Customer());
+            WhenSampleExecute();
+            CustomerNameShouldBeEqual(string.Empty);
+        }
+
+        [Test()]
+        public void GetNullCustomerName()
+        {
             GivenCustomerObject(null);
             WhenSampleExecute();
             CustomerNameShouldBeEqual("occupant");
         }
 
         [Test()]
-        public void GetWeeksDelinquent()
+        public void GetNullWeeksDelinquent()
         {
             GivenCustomerObject(null);
             WhenSampleExecute();
             WeeksDelinquentShouldBeEqual(0);
+        }
+
+        [Test()]
+        public void GetWeeksDelinquent()
+        {
+            GivenCustomerObject(new Customer());
+            WhenSampleExecute();
+            WeeksDelinquentShouldBeEqual(1);
         }
 
         private void WeeksDelinquentShouldBeEqual(int expected)
