@@ -2,7 +2,12 @@
 {
     public class PaymentHistory
     {
-        public int GetWeeksDelinquentInLastYear()
+        public static PaymentHistory NewNull()
+        {
+            return new NullPaymentHistory();
+        }
+
+        public virtual int GetWeeksDelinquentInLastYear()
         {
             return 1;
         }

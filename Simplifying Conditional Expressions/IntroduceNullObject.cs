@@ -30,14 +30,7 @@ namespace Simplifying_Conditional_Expressions
 
             CustomerName = Customer.GetName();
 
-            if (Customer.IsNull())
-            {
-                WeeksDelinquent = 0;
-            }
-            else
-            {
-                WeeksDelinquent = Customer.History.GetWeeksDelinquentInLastYear();
-            }
+            WeeksDelinquent = Customer.GetHistory().GetWeeksDelinquentInLastYear();
         }
     }
 }
