@@ -4,38 +4,46 @@ namespace Simplifying_Conditional_Expressions
 {
     public class IntroduceNullObject
     {
+        private readonly Site _site;
+        public string CustomerName;
+        public int WeeksDelinquent;
+        private Customer Customer;
+        private BillingPlan Plan;
+
+        public IntroduceNullObject(Site site)
+        {
+            _site = site;
+        }
+
         public void Sample()
         {
-            var customer = new Site().Customer;
-            BillingPlan plan;
-            string customerName;
-            int weeksDelinquent;
+            Customer = _site.Customer;
 
-            if (customer == null)
+            if (Customer == null)
             {
-                plan = new BillingPlan();
+                Plan = new BillingPlan();
             }
             else
             {
-                plan = customer.Plan;
+                Plan = Customer.Plan;
             }
 
-            if (customer == null)
+            if (Customer == null)
             {
-                customerName = "occupant";
+                CustomerName = "occupant";
             }
             else
             {
-                customerName = customer.GetName();
+                CustomerName = Customer.GetName();
             }
 
-            if (customer == null)
+            if (Customer == null)
             {
-                weeksDelinquent = 0;
+                WeeksDelinquent = 0;
             }
             else
             {
-                weeksDelinquent = customer.History.GetWeeksDelinquentInLastYear();
+                WeeksDelinquent = Customer.History.GetWeeksDelinquentInLastYear();
             }
         }
     }

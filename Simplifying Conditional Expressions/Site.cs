@@ -10,5 +10,10 @@ namespace Simplifying_Conditional_Expressions
         {
             get { return _customer; }
         }
+
+        public Site(Customer customer)
+        {
+            _customer = customer;
+        }
     }
 }

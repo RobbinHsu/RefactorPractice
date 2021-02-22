@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtractMethod", "ExtractMet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakingMethodCallsSimpler", "MakingMethodCallsSimpler\MakingMethodCallsSimpler.csproj", "{D8A36E5A-824A-4338-9426-4D7B691CDFD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplifying Conditional Expressions", "Simplifying Conditional Expressions\Simplifying Conditional Expressions.csproj", "{6BF8A8DD-D604-407F-BC31-D5D8D487683E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simplifying Conditional Expressions", "Simplifying Conditional Expressions\Simplifying Conditional Expressions.csproj", "{6BF8A8DD-D604-407F-BC31-D5D8D487683E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplifying Conditional ExpressionsTests", "Simplifying Conditional ExpressionsTests\Simplifying Conditional ExpressionsTests.csproj", "{EB4D1650-1107-4ACF-8323-E3C5450455D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6BF8A8DD-D604-407F-BC31-D5D8D487683E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BF8A8DD-D604-407F-BC31-D5D8D487683E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BF8A8DD-D604-407F-BC31-D5D8D487683E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4D1650-1107-4ACF-8323-E3C5450455D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4D1650-1107-4ACF-8323-E3C5450455D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4D1650-1107-4ACF-8323-E3C5450455D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4D1650-1107-4ACF-8323-E3C5450455D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
