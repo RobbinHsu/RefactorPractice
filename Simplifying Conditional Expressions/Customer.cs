@@ -12,5 +12,10 @@
         {
             return string.Empty;
         }
+
+        public bool IsNull()
+        {
+            return false;
+        }
     }
 }
