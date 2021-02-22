@@ -2,10 +2,6 @@
 {
     public class Customer
     {
-        public string Name { get; set; }
-
-        public BillingPlan Plan { get; set; }
-
         public static Customer NewNull()
         {
             return new NullCustomer();
@@ -21,12 +17,7 @@
             return string.Empty;
         }
 
-        public virtual bool IsNull()
-        {
-            return false;
-        }
-
-        public BillingPlan GetPlan()
+        public virtual BillingPlan GetPlan()
         {
             return new BillingPlan() {Type = "Special"};
         }

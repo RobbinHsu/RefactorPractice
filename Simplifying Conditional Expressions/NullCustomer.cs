@@ -16,9 +16,9 @@ namespace Simplifying_Conditional_Expressions
             return "occupant";
         }
 
-        public override bool IsNull()
+        public override BillingPlan GetPlan()
         {
-            return true;
+            return new BillingPlan() {Type = "Basic"};
         }
     }
 }
