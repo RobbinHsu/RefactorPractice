@@ -12,11 +12,27 @@ namespace Simplifying_Conditional_Expressions.Tests
         private IntroduceNullObject _introduceNullObject;
 
         [Test()]
+        public void GetBillingPlan()
+        {
+            GivenCustomerObject(new Customer());
+            WhenSampleExecute();
+            Assert.AreEqual("Special", _introduceNullObject.Plan.Type);
+        }
+
+        [Test()]
         public void GetCustomerName()
         {
             GivenCustomerObject(new Customer());
             WhenSampleExecute();
             CustomerNameShouldBeEqual(string.Empty);
+        }
+
+        [Test()]
+        public void GetNullBillingPlan()
+        {
+            GivenCustomerObject(null);
+            WhenSampleExecute();
+            Assert.AreEqual("Basic", _introduceNullObject.Plan.Type);
         }
 
         [Test()]

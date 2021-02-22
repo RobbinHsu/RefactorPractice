@@ -25,5 +25,10 @@
         {
             return false;
         }
+
+        public BillingPlan GetPlan()
+        {
+            return new BillingPlan() {Type = "Special"};
+        }
     }
 }

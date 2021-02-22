@@ -8,7 +8,7 @@ namespace Simplifying_Conditional_Expressions
         public string CustomerName;
         public int WeeksDelinquent;
         private Customer Customer;
-        private BillingPlan Plan;
+        public BillingPlan Plan;
 
         public IntroduceNullObject(Site site)
         {
@@ -21,11 +21,11 @@ namespace Simplifying_Conditional_Expressions
 
             if (Customer.IsNull())
             {
-                Plan = new BillingPlan();
+                Plan = BillingPlan.Basic();
             }
             else
             {
-                Plan = Customer.Plan;
+                Plan = Customer.GetPlan();
             }
 
             CustomerName = Customer.GetName();
