@@ -7,7 +7,7 @@
 
         public BillingPlan Plan { get; set; }
 
-        public string GetName()
+        public virtual string GetName()
         {
             return string.Empty;
         }

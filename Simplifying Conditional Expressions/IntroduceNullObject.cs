@@ -28,14 +28,7 @@ namespace Simplifying_Conditional_Expressions
                 Plan = Customer.Plan;
             }
 
-            if (Customer.IsNull())
-            {
-                CustomerName = "occupant";
-            }
-            else
-            {
-                CustomerName = Customer.GetName();
-            }
+            CustomerName = Customer.GetName();
 
             if (Customer.IsNull())
             {
