@@ -4,12 +4,9 @@ namespace Simplifying_Conditional_Expressions
 {
     public class Site
     {
-        private Customer _customer;
+        private readonly Customer _customer;
 
-        public Customer Customer
-        {
-            get { return _customer; }
-        }
+        public Customer Customer => _customer ?? Customer.NewNull();
 
         public Site(Customer customer)
         {

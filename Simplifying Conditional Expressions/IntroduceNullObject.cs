@@ -19,7 +19,7 @@ namespace Simplifying_Conditional_Expressions
         {
             Customer = _site.Customer;
 
-            if (Customer == null)
+            if (Customer.IsNull())
             {
                 Plan = new BillingPlan();
             }
@@ -28,7 +28,7 @@ namespace Simplifying_Conditional_Expressions
                 Plan = Customer.Plan;
             }
 
-            if (Customer == null)
+            if (Customer.IsNull())
             {
                 CustomerName = "occupant";
             }
@@ -37,7 +37,7 @@ namespace Simplifying_Conditional_Expressions
                 CustomerName = Customer.GetName();
             }
 
-            if (Customer == null)
+            if (Customer.IsNull())
             {
                 WeeksDelinquent = 0;
             }

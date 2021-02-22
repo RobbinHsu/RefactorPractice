@@ -16,5 +16,10 @@
         {
             return false;
         }
+
+        public static Customer NewNull()
+        {
+            return new NullCustomer();
+        }
     }
 }
