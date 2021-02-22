@@ -6,3 +6,5 @@
 * [提煉函式(Extract Method)](https://github.com/RobbinHsu/RefactorPractice/tree/MyRefactor/ExtractMethod)
 ### 簡化函式呼叫(Making Methid Calls Simpler)
 * [將查詢函式和修改函式分離(Separate Query from Modifier)](https://github.com/RobbinHsu/RefactorPractice/tree/MyRefactor/MakingMethodCallsSimpler)
+### 簡化條件式(Simplifying Conditional Expressions)
+* [引入 Null 物件(Introduce Null Object)](https://github.com/RobbinHsu/RefactorPractice/tree/MyRefactor/Simplifying%20Conditional%20Expressions)
