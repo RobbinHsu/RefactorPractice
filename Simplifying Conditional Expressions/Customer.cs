@@ -2,11 +2,10 @@
 {
     public class Customer
     {
+        public readonly PaymentHistory History = new PaymentHistory();
         public string Name { get; set; }
 
         public BillingPlan Plan { get; set; }
-
-        public PaymentHistory History { get; set; }
 
         public string GetName()
         {

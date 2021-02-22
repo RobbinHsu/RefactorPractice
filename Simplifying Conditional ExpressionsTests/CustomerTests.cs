@@ -9,37 +9,42 @@ namespace Simplifying_Conditional_Expressions.Tests
     [TestFixture()]
     public class CustomerTests
     {
-        private IntroduceNullObject _customer;
+        private IntroduceNullObject _introduceNullObject;
 
         [Test()]
         public void GetCustomerName()
         {
             GivenCustomerObject(null);
             WhenSampleExecute();
-            ShouldBeEqual("occupant");
+            CustomerNameShouldBeEqual("occupant");
         }
 
         [Test()]
         public void GetWeeksDelinquent()
         {
-            _customer = new IntroduceNullObject(new Site(null));
+            GivenCustomerObject(null);
             WhenSampleExecute();
-            Assert.AreEqual(0, _customer.WeeksDelinquent);
+            WeeksDelinquentShouldBeEqual(0);
+        }
+
+        private void WeeksDelinquentShouldBeEqual(int expected)
+        {
+            Assert.AreEqual(expected, _introduceNullObject.WeeksDelinquent);
         }
 
         private void GivenCustomerObject(Customer customer)
         {
-            _customer = new IntroduceNullObject(new Site(customer));
+            _introduceNullObject = new IntroduceNullObject(new Site(customer));
         }
 
-        private void ShouldBeEqual(string occupant)
+        private void CustomerNameShouldBeEqual(string occupant)
         {
-            Assert.AreEqual(occupant, _customer.CustomerName);
+            Assert.AreEqual(occupant, _introduceNullObject.CustomerName);
         }
 
         private void WhenSampleExecute()
         {
-            _customer.Sample();
+            _introduceNullObject.Sample();
         }
     }
 }
