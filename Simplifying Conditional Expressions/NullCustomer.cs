@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Simplifying_Conditional_Expressions
 {
-    public class NullCustomer
+    public class NullCustomer : Customer
     {
-        public bool IsNull()
+        public override bool IsNull()
         {
             return true;
         }

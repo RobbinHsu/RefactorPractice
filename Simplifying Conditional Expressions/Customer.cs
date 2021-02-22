@@ -13,7 +13,7 @@
             return string.Empty;
         }
 
-        public bool IsNull()
+        public virtual bool IsNull()
         {
             return false;
         }
